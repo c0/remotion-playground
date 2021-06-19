@@ -16,6 +16,9 @@ const BLOB_COLOR = '#000'
 const DECAY = 0.1
 const VELOCITY = 2 // >= 1
 
+// Start the animation sooner
+const START_OFFSET = 60
+
 const CANVAS_STYLE = {
   top: 0,
   left: 0,
@@ -47,7 +50,7 @@ const Ball = ({ ctx, seed, x, y, frame }) => {
   return <></>
 }
 
-export const One = ({ titleText, titleColor }) => {
+export const One = () => {
   const frame = useCurrentFrame()
   const { width, height, durationInFrames } = useVideoConfig()
   const canvas = useRef(null)
@@ -57,7 +60,13 @@ export const One = ({ titleText, titleColor }) => {
   const ballCount = Math.round(durationInFrames / 10) + Math.floor(rand * 5)
   const balls = []
   for (let i = 0; i < ballCount; i++) {
-    balls.push({ start: randomRange(i + rand, -60, durationInFrames - 120) })
+    balls.push({
+      start: randomRange(
+        i + rand,
+        -START_OFFSET,
+        durationInFrames - START_OFFSET
+      ),
+    })
   }
 
   const centerX = width / 2 - LARGE_BLOB_DIAMETER / 2
@@ -84,11 +93,16 @@ export const One = ({ titleText, titleColor }) => {
         style={CANVAS_STYLE}
       />
       {balls.map(({ start }, i) => (
-        <Sequence key={i} from={start} durationInFrames={120}>
+        <Sequence
+          key={i}
+          name={`Ball ${i}`}
+          from={start}
+          durationInFrames={120}
+        >
           <Ball
             ctx={ctx}
             frame={frame - start}
-            seed={i}
+            seed={i * rand}
             x={centerX}
             y={centerY}
           />
