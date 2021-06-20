@@ -50,7 +50,7 @@ const Ball = ({ ctx, seed, x, y, frame }) => {
   return <></>
 }
 
-export const One = () => {
+export const GooBall = () => {
   const frame = useCurrentFrame()
   const { width, height, durationInFrames } = useVideoConfig()
   const canvas = useRef(null)
@@ -64,7 +64,7 @@ export const One = () => {
       start: randomRange(
         i + rand,
         -START_OFFSET,
-        durationInFrames - START_OFFSET
+        durationInFrames - START_OFFSET / 2
       ),
     })
   }
