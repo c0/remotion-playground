@@ -1,16 +1,16 @@
 {
   "name": "remotion-template",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "Playground. Gooooo",
   "scripts": {
     "start": "remotion preview src/index.tsx",
-    "build": "remotion render src/index.tsx GooBallCSS out.mp4",
+    "build": "remotion render src/index.tsx GooBallDrip out/goo-ball-drip.mp4",
     "upgrade": "remotion upgrade",
     "server": "ts-node server.tsx",
     "test": "eslint src --ext ts,tsx,js,jsx && tsc"
   },
   "repository": {},
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "@remotion/bundler": "^2.1.5",
     "@remotion/cli": "^2.1.5",

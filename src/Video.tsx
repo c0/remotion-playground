@@ -1,6 +1,9 @@
 import { Composition } from 'remotion'
 import { GooBall } from './GooBall'
 import { GooBallCSS } from './GooBallCSS'
+import { GooBallDrip } from './GooBallDrip'
+
+const FPS = 30
 
 export const RemotionVideo: React.FC = () => {
   return (
@@ -8,16 +11,24 @@ export const RemotionVideo: React.FC = () => {
       <Composition
         id="GooBall"
         component={GooBall}
-        durationInFrames={300}
-        fps={30}
+        durationInFrames={10 * FPS}
+        fps={FPS}
         width={500}
         height={500}
       />
       <Composition
         id="GooBallCSS"
         component={GooBallCSS}
-        durationInFrames={300}
-        fps={30}
+        durationInFrames={10 * FPS}
+        fps={FPS}
+        width={500}
+        height={500}
+      />
+      <Composition
+        id="GooBallDrip"
+        component={GooBallDrip}
+        durationInFrames={15 * FPS}
+        fps={FPS}
         width={500}
         height={500}
       />
