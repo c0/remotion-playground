@@ -7,6 +7,7 @@
     "render:ball": "remotion render src/index.tsx GooBall out/goo-ball.mp4",
     "render:css": "remotion render src/index.tsx GooBallCSS out/goo-ball-css.mp4",
     "render:drip": "remotion render src/index.tsx GooBallDrip out/goo-ball-drip.mp4",
+    "render:eclipse": "remotion render src/index.tsx GooEclipse out/goo-eclipse.mp4",
     "render:line": "remotion render src/index.tsx GooLine out/goo-line.mp4",
     "render:woom": "remotion render src/index.tsx GooWoom out/goo-woom.mp4",
     "upgrade": "remotion upgrade",
