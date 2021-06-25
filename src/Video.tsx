@@ -2,6 +2,7 @@ import { Composition } from 'remotion'
 import { GooBall } from './GooBall'
 import { GooBallCSS } from './GooBallCSS'
 import { GooBallDrip } from './GooBallDrip'
+import { GooDrippings } from './GooDrippings'
 import { GooEclipse } from './GooEclipse'
 import { GooLine } from './GooLine'
 import { GooWoom } from './GooWoom'
@@ -30,6 +31,14 @@ export const RemotionVideo: React.FC = () => {
       <Composition
         id="GooBallDrip"
         component={GooBallDrip}
+        durationInFrames={15 * FPS}
+        fps={FPS}
+        width={500}
+        height={500}
+      />
+      <Composition
+        id="GooDrippings"
+        component={GooDrippings}
         durationInFrames={15 * FPS}
         fps={FPS}
         width={500}
