@@ -4,7 +4,9 @@
   "description": "Playground. Gooooo",
   "scripts": {
     "start": "remotion preview src/index.tsx",
-    "build": "remotion render src/index.tsx GooBallDrip out/goo-ball-drip.mp4",
+    "render:ball": "remotion render src/index.tsx GooBall out/goo-ball.mp4",
+    "render:css": "remotion render src/index.tsx GooBallCSS out/goo-ball-css.mp4",
+    "render:drip": "remotion render src/index.tsx GooBallDrip out/goo-ball-drip.mp4",
     "upgrade": "remotion upgrade",
     "server": "ts-node server.tsx",
     "test": "eslint src --ext ts,tsx,js,jsx && tsc"
