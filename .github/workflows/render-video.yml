@@ -15,6 +15,7 @@ jobs:
       - run: sudo apt update
       - run: sudo apt install ffmpeg
       - run: yarn install
+      - run: mkdir out
       - run: npm run render:${{ github.event.inputs.name }}
       - uses: actions/upload-artifact@v2
         with:
