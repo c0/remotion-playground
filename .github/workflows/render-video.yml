@@ -19,5 +19,5 @@ jobs:
       - run: npm run render:${{ github.event.inputs.name }}
       - uses: actions/upload-artifact@v2
         with:
-          name: out/goo-${{ github.event.inputs.name }}.mp4
+          name: goo-${{ github.event.inputs.name }}.mp4
           path: out/goo-${{ github.event.inputs.name }}.mp4
