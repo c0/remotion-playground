@@ -15,10 +15,10 @@ export const RemotionVideo: React.FC = () => {
       <Composition
         id="GooBall"
         component={GooBall}
-        durationInFrames={10 * FPS}
+        durationInFrames={60 * 2 * FPS}
         fps={FPS}
-        width={500}
-        height={500}
+        width={1080}
+        height={1080}
       />
       <Composition
         id="GooBallCSS"

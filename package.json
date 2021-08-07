@@ -4,7 +4,7 @@
   "description": "Playground. Gooooo",
   "scripts": {
     "start": "remotion preview src/index.tsx",
-    "render:ball": "remotion render src/index.tsx GooBall out/goo-ball.mp4",
+    "render:ball": "remotion render src/index.tsx GooBall out/goo-ball-1080p.mp4",
     "render:css": "remotion render src/index.tsx GooBallCSS out/goo-ball-css.mp4",
     "render:drip": "remotion render src/index.tsx GooBallDrip out/goo-ball-drip.mp4",
     "render:drippings": "remotion render src/index.tsx GooDrippings out/goo-drippings.mp4",

@@ -11,13 +11,13 @@ const randomRange = (seed, min, max) => {
   return Math.round(random(seed) * (max - min) + min)
 }
 
-const LARGE_BLOB_DIAMETER = 20
+const LARGE_BLOB_RADIUS = 90
 const BLOB_COLOR = '#000'
-const DECAY = 0.1
+const DECAY = 0.3
 const VELOCITY = 2 // >= 1
 
 // Start the animation sooner
-const START_OFFSET = 60
+const START_OFFSET = 60 * 2.2
 
 const CANVAS_STYLE = {
   top: 0,
@@ -38,7 +38,7 @@ const Ball = ({ ctx, seed, x, y, frame }) => {
   let vx = (VELOCITY + random(seed) * (1 - VELOCITY)) * Math.cos(angle)
   let vy = (VELOCITY + random(seed) * (1 - VELOCITY)) * Math.sin(angle)
 
-  let r = randomRange(seed, 12, 15)
+  let r = randomRange(seed, 35, 50)
   r -= DECAY * frame
 
   var br = r >= 0 ? r : 0
@@ -57,7 +57,7 @@ export const GooBall = () => {
 
   const rand = random(durationInFrames)
 
-  const ballCount = Math.round(durationInFrames / 10) + Math.floor(rand * 5)
+  const ballCount = Math.round(durationInFrames / 3) + Math.floor(rand * 30)
   const balls = []
   for (let i = 0; i < ballCount; i++) {
     balls.push({
@@ -69,8 +69,8 @@ export const GooBall = () => {
     })
   }
 
-  const centerX = width / 2 - LARGE_BLOB_DIAMETER / 2
-  const centerY = height / 2 - LARGE_BLOB_DIAMETER / 2
+  const centerX = width / 2
+  const centerY = height / 2
 
   const ctx = canvas && canvas.current ? canvas.current.getContext('2d') : null
   if (ctx) {
@@ -79,7 +79,7 @@ export const GooBall = () => {
 
     // Draw the main ball
     ctx.beginPath()
-    ctx.arc(centerX, centerY, LARGE_BLOB_DIAMETER, 0, Math.PI * 2, false)
+    ctx.arc(centerX, centerY, LARGE_BLOB_RADIUS, 0, Math.PI * 2, false)
     ctx.fill()
   }
 
